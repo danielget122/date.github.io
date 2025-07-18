@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ano 🐼</title>
+
+  <!-- CSS: Styles -->
+  <style>
+    body {
+        color : green;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      background-color:#f3f4ff;
+      background-image : url("https://media.istockphoto.com/id/1162669873/vector/cute-panda-paws-up-over-wall-panda-face-cartoon-icon-vector-illustration.jpg?s=612x612&w=0&k=20&c=sq_TBuYnAppScO_2tdMP3AhHWTlXlHipURnI96HWObY=");
+    background-size: cover;
+    background-repeat : no-repeat;
+    background-position-y: 20%;
+      #message{
+        fot-size : 35px;
+        color: hotpink;
+
+      }
+    }
+    img {
+      width: 150px;
+    }
+    .button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .yes { background-color: #4CAF50; color: white; }
+    .no { background-color: #f44336; color: white; }
+    #message {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <h1 id = "say-hi">Hoyooo papo</h1>
+    <p id = "First-question">Don't you think its crazy we have been together for 2 years? 🐼</p>
+    <h1 id = "response-yes" style="display: none;">Chi veya muy biench 🐼👉👈</h1>
+
+    <p id = "second-question" style="display: none;">I was wondering if you would let me take you on a date? eee hoya 🐼👉👈</p>
+
+
+  <button class="button yes" onclick="sayYes()">Chi veya</button>
+  <button class="button no" onclick="sayNo()">No (what maya)</button>
+
+  <div id="message"></div>
+
+  <!-- JavaScript: Logic -->
+  <script>
+    let noClicks = 0;
+    let yesClicks = 0;
+    // function firstYes(){
+    //     document.getElementById("message").textContent = "Chi veya muy biench 👉👈";
+    // }
+
+    function sayYes() {
+    yesClicks++;
+        const message = document.getElementById("message");
+        document.body.style.backgroundImage = "url('https://img.freepik.com/premium-vector/cute-panda-hold-flower-cartoon-icon-illustration_295036-2082.jpg')"; // happy panda image
+      if (yesClicks === 1){
+        // message.textContent = "Chi veya muy biench 👉👈"
+        document.getElementById("say-hi").style.display = "none";
+        //message.textContent = "Chi veya muy biench 👉👈";
+        document.getElementById("response-yes").style.display = "block";
+        document.getElementById("First-question").style.display = "none";
+        document.getElementById("second-question").style.display = "block";
+        //message.textContent = "Chi veya muy biench 👉👈";
+      }
+      
+      if (yesClicks === 2){
+        document.getElementById("response-yes").style.display = "none";
+        document.getElementById("second-question").style.display = "none";
+        document.getElementById("message").style.display = "block";
+        message.textContent = "Eeee hoooya muy biench you passed the prove 👉👈";
+      }
+      if (yesClicks === 3){
+        message.textContent = "eeeee hooooooooooooooya te amoch 🐼";
+        document.getElementById("second-question").style.display = "none";
+      }
+      
+    }
+
+    function sayNo() {
+      noClicks++;
+      const message = document.getElementById("message");
+      document.body.style.backgroundImage = "url('https://ih1.redbubble.net/image.580415368.6022/flat,750x,075,f-pad,750x1000,f8f8f8.jpg')";
+
+      if (noClicks === 1) {
+        message.textContent = "Que maya Are you sure? 😥";
+      } else if (noClicks === 2) {
+        message.textContent = "Que mayaaaaa what are you doiiiing? Sure sure? 😢";
+        //panda.src = "https://i.imgur.com/fxJrZnR.png"; // sad panda image
+      } else if (noClicks==1  && yesClicks == 2 ) {
+        message.textContent = "eeee you already said yes gachaaaa, te amo muchoch 👉👈";
+      }
+    }
+  </script>
+
+</body>
+</html>
